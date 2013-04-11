@@ -10,4 +10,5 @@ ugraph.o: ugraph.cpp undirectedgraph.h errors.h types.h ugraph.h
 	$(CC) $(CCFLAGS) ugraph.cpp -c -o ugraph.o
 
 clean:
+	rm -rf ./gsearch
 	rm -rf *.o
