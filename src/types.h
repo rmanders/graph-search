@@ -5,17 +5,28 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX(a,b)	(((a)>=(b)) ? (a) : (b))
+#define MIN(a,b)	(((a)<(b)) ? (a) : (b))
+
 #ifdef WINDOWS
-typedef __int64            int64;
-typedef unsigned __int64   uint64;
+typedef __int64            Int64Type;
+typedef unsigned __int64   Uint64Type;
 #else
-typedef long long          int64;
-typedef unsigned long long uint64;
+typedef long long          Int64Type;
+typedef unsigned long long Uint64Type;
 #endif
 
-typedef unsigned int     uint32;
-typedef int              int32;
+typedef unsigned int       Uint32Type;
+typedef int                Int32Type;
+typedef unsigned char	   UcharType;
+typedef unsigned char      ByteType;
+typedef unsigned int       VertexIdType;
 
-typedef unsigned char	 uchar;
+
+typedef struct _AdjListNode {
+	VertexIdType mVertexId;
+	struct _AdjListNode* mNextNode;
+	struct _AdjListNode* mPrevNode;
+} AdjListNode;
 
 #endif
